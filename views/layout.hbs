@@ -1,10 +1,113 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Pagina Web</title>
+    <link rel="stylesheet" href="stylesheets/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link <link
+        href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Open+Sans:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/fontello.css">
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
+</head>
+
+<body>
+    <!--<div class="fondo"></div>-->
+    
+    <header>
+        <div class="header-logo">
+            <img src="images/logoonetower.jpg" alt="logo" width="150">
+        </div>
+        <div class="header-contenedor">
+            
+            <div class="header-iconmenu">
+                <input type="checkbox" id="menu-bar">
+                <!--este input es para hacer un menu desplegable-->
+                <label class="icon-menu" for="menu-bar"></label>
+                <!--esta label tambien es para el menu bar-->
+                <nav class="menu">
+
+                    <a href="/">Inicio</a>
+                    <a href="/nosotros">Nosotros</a>
+                    <a href="/proyectos">Proyectos</a>
+                    <a href="/noticias">Noticias</a>
+                    <a href="/contacto">Contacto</a>
+                    <div class="redes">
+                        <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.png"
+                                alt="facebook"></a>
+                        <a href="https://www.instagram.com/?hl=es-la
+                        " target="_blank"><img src="images/instagram.png" alt="instagram"></a>
+                        <a href="https://www.linkedin.com/signup
+                        " target="_blank"><img src="images/linkedin.png" alt="linkedin"></a>
+                        <a href="https://web.whatsapp.com/
+                        " target="_blank"><img src="images/whatsapp.png" alt="whatsapp"></a>
+                        <a href="https://www.youtube.com/
+                        " target="_blank"><img src="images/youtube.png" alt="youtube"></a>
+
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+        <!--<div class="header-texto">
+            <p>Somos One Tower Construcciones</p>
+            <h1>Nos especializamos en el diseño,
+                construcción y transformación de espacios.</h1>
+        </div>-->
+
+    </header>
+    <main>
     {{{body}}}
-  </body>
-</html>
+</main>
+    <!--inicio footer-->
+    <footer class="footer-main">
+        <div class="container-footer">
+            <div class="col-info">
+                <img src="images/logoonetower.jpg" alt="logo" width="150">
+                <ul>
+                    <li>Direccion: Mariscal Antonio Jose de Sucre 3611-piso1
+                        <br>
+                        Ciudad Autonoma de Buenos Aires, Argentina.
+                        <br>
+                        <br>
+                    </li>
+
+                    <li>Telefono: (+54 11)5807-6452</li>
+                    <li>Envianos tu consulta a: <a
+                            href="mailto:info@onetowerconstrucciones.com">info@onetowerconstrucciones.com</a></li>
+                </ul>
+            </div>
+            <div class="col-nav">
+                <h4>LINK</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li> <a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-redes">
+                <H4>SOCIAL</H4>
+                <div class="iconos-fotter">
+                    <a class="ic-fb" target="_blank" href="https://es-la.facebook.com/"><img src="images/facebook.png"
+                            alt=""></a>
+                    <a class="ic-ig" target="_blank" href="https://www.instagram.com/"><img src="images/instagram.png"
+                            alt=""></a>
+                    <a class="ic-lkd" target="_blank"
+                        href="https://www.linkedin.com/in/scottdresden/?original_referer=https%3A%2F%2Fwww.google.com%2F"><img
+                            src="images/linkedin.png" alt=""></a>
+                </div>
+            </div>
+
+            <div class="col-copy">
+                <H4>COPYRIGHT</H4>
+                <p>Carolina Sosa Rojido&copy;</p>
+            </div>
+        </div>
+
+    </footer>

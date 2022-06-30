@@ -1,0 +1,1413 @@
+/*font-family: 'La Belle Aurore', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;*/
+
+/*propiedades de la pagina*/
+
+html {
+    box-sizing: border-box; /*El valor box-sizing border-box hace que el padding y el border pasen a formar parte del cálculo del ancho de la caja y no lo suman posteriormente.*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.fondo { /*esta clase la utilice para poner una imagen de fondo que ocupara todo el header*/
+    width: 100%;
+    height: 62.5em;
+    position: relative;
+    background-image: url("../images/fondomain6.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(30%);
+}
+
+header {
+    width: 100%;
+    /*ancho del header*/
+    height: 0;
+    /*alto del header*/
+    margin-bottom: 4em;
+}
+
+.header-contenedor {
+    position: fixed; /*le di position fixed para que cuando hago scroll hacia abajo el icono del menu nav baje junto al scroll*/
+    top: 0;
+    padding: 3.125em;
+    width: 100%;
+    height: 6.25em;
+}
+
+.header-logo {
+    position: absolute;
+    top: 4.375em;
+    left: 3.75em;
+}
+
+.header-logo::before {
+    content: "<header>";
+    font-family: 'La Belle Aurore', cursive;
+    color: rgb(248, 4, 4);
+    font-size: 1.4em;
+    position: absolute;
+    margin-top: -2em;
+    left: -1em;
+    text-transform: lowercase;
+}
+
+.header-logo::after {
+    content: "<header>";
+    font-family: 'La Belle Aurore', cursive;
+    color: rgb(248, 4, 4);
+    font-size: 1.4em;
+    position: absolute;
+    margin-top: 7em;
+    left: 74.25em;
+    text-transform: lowercase;
+}
+
+.header-texto {
+    width: 75em;
+    height: 37.5em;
+    position: relative;
+    top: -39em;
+    right: -19em;
+}
+
+.header-texto h1 {
+    /*float: left; /*le indico al titulo que flote a la izq*/
+    margin-top: 1.5625em;
+    /*para que se separe el texto de la imagen*/
+    color: rgb(8, 8, 8);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3.75em;
+    font-weight: 700 !important;
+}
+
+.header-texto h1::before {
+    content: "<h1>";
+    font-family: 'La Belle Aurore', cursive;
+    color: rgb(248, 4, 4);
+    font-size: 0.4em;
+    position: absolute;
+    margin-top: -0.5em;
+    left: -1.7em;
+    text-transform: lowercase;
+}
+
+.header-texto h1::after {
+    content: "<h1>";
+    font-family: 'La Belle Aurore', cursive;
+    color: rgb(248, 4, 4);
+    font-size: 0.4em;
+    position: absolute;
+    margin-top: 2em;
+    right: 29em;
+    text-transform: lowercase;
+}
+
+.header-texto p {
+    color: rgb(7, 7, 7);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+
+.header-texto p::before {
+    content: "<p>";
+    font-family: 'La Belle Aurore', cursive;
+    color: rgb(248, 4, 4);
+    font-size: 1.1em;
+    position: absolute;
+    margin-top: -1rem;
+    left: -2rem;
+    text-transform: lowercase;
+}
+
+.header-texto p::after {
+    content: "<p>";
+    font-family: 'La Belle Aurore', cursive;
+    color: rgb(248, 4, 4);
+    font-size: 1.1em;
+    position: absolute;
+    right: 50em;
+    bottom: 17em;
+    text-transform: lowercase;
+}
+
+
+
+/*INICIO ESTILOS PARA EL MENU*/
+#menu-bar {
+    display: none;
+}
+
+header label {
+    position: relative;
+    z-index: 100;
+    float: right;
+    /*le voy a indicar a la etiqueta menu que esta adentro del header que el icono menu flote*/
+    font-size: 2.1875em;
+    /*es el tamanio que voy a darle al icono*/
+    margin: 1.5625em 0;
+    cursor: pointer;
+    /*para que cuando pase el mouse aparezca la manito*/
+    color: black;
+}
+
+header label:hover {
+    color: black;
+}
+
+.menu {
+    position: absolute;
+    top: 0px;
+    /*desde donde empieza, le indicamos que empiece desde la esquina, esta medida si quiero que empiece desde abajo tengo que poner la misma medida que le di al alto del header*/
+    right: 0;
+    width: 20%;
+    /*ancho del menu*/
+    height: 100vh;
+    /*para que ocupe siempre el alto de la ventana*/
+    background: #F7F5F2;
+    transition: all 1.5s;
+    /*le indico que cuando hago click en el icono del menu aparezca o desaparezca el menu en 1.5 segundos */
+    transform: translate3D(100%, 0, 0);
+    /*le indico que aparezca o desaparezca de izq a derecha el 100% del menu*/
+    padding-top: 2.5em;
+}
+
+
+.menu a {
+    /*le vamos a decir que caracteristicas tienen los nombres del menu*/
+    display: block;
+    color: #0a0a0a;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.875em;
+    font-weight: 700;
+    height: 3.125em;
+    /*altura*/
+    text-decoration: none;
+    padding: 0.9375em 0.9375em 0.9375em 5em;
+    border-bottom: 0.0625em solid rgba(255, 255, 255, 0.3);
+    margin-top: 1.5625em;
+}
+
+
+.menu:hover {
+    transform: translate3d(0, 0, 0);
+    transition-duration: 1s;
+}
+
+.menu a:hover {
+    /*le voy a indicar que cuando pase por encima del contenido del menu se vuelva transparente para indicar el activo*/
+    background: rgba(255, 255, 255, 0.9);
+    /*transition-duration: 1s;*/
+}
+
+/* le voy a indicar que cuando toco el icono del menu se muestre o se oculte*/
+/*para eso voy a seleccionar el menu bar y cuando tenga la pseudoclase checked del input typo checkbox  tiene que seleccionar al menu y lo traslada de un lado al otro, segun el estilo que aplique en el menu.(alt126= ~)*/
+#menu-bar:hover~.menu {
+    transform: translate3d(0, 0, 0);
+    transition-duration: 1s;
+}
+
+.redes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5.75em;
+}
+
+
+.redes a {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto;
+}
+
+.redes img {
+    width: 1.4375em;
+}
+
+.redes img:hover {
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.5);
+}
+
+/*FIN ESTILOS MENU*/
+/*INICIO ESTILOS MAIN*/
+
+.contenedor-info {
+    width: 87.5em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.info {
+    width: calc(33.3% - 1em);
+    text-align: center;
+    margin-bottom: 3.125em;
+}
+
+.info img {
+    width: 15.625em;
+    height: 15.625em;
+    border-radius: 50%;
+    border-width: 7px;
+    border-color: #dab88bd9;
+    border-style: double;
+}
+
+.info img:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+.texto-info {
+    margin-top: 2.5em;
+}
+
+.texto-info h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5625em;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+.texto-info p {
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 1.875em;
+    line-height: 2.3;
+    font-weight: lighter;
+    padding: 0 1.875em;
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+    position: fixed;
+    width: 3.75em;
+    height: 3.75em;
+    bottom: 2.5em;
+    right: 2.5em;
+    color: #F7F5F2;
+    border-radius: 3.125em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+}
+
+
+.fab {
+    font-family: Font Awesome\ 5 Brands;
+    font-weight: 400;
+    font-size: 1.875em;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.fa-whatsapp::before {
+    content: "\f232";
+}
+
+/*FIN ESTILOS MENU*/
+
+/*INICIO ESTILOS FOOTER*/
+.footer-main {
+    height: auto;
+    /* 28.125em; */
+    background-color: rgb(126, 124, 124);
+    text-align: center;
+}
+
+.container-footer {
+    display: flex;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    /*cambiamos a 100%*/
+    margin: 0 auto;
+    height: auto;
+    /*cambiamos de 28.125em;*/
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 0.875em;
+    padding-bottom: 4em;
+    /*Agregamos un padding*/
+}
+
+.container-footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.container-footer>div {
+    /*>div: significa que selecciono los hijos que sean div del container-footer*/
+    margin-top: 3.75em;
+
+}
+
+.container-footer>div li {
+    list-style: none;
+    margin-bottom: 0.9375em;
+
+}
+
+.container-footer h4 {
+    margin-bottom: 1.25em;
+    font-size: 1.125em;
+}
+
+.col-redes {
+    width: 8.125em;
+}
+
+.iconos-fotter {
+    display: flex;
+    justify-content: space-around;
+}
+
+.col-info ul {
+    margin-top: 1.25em;
+}
+
+.col-info li {
+    list-style: none;
+}
+
+.contenido {
+    color: white;
+}
+
+.contenido {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/*FIN ESTILOS FOOTER*/
+/*-------------------------------------------------------------------------*/
+/*INICIO ESTILOS NOSOTROS*/
+/*NOSOTROS---------------*/
+.fondo-nosotros {
+    width: 100%;
+    height: 18.75em;
+    position: relative;
+    background-image: url("../images/fondomain9.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(30%);
+}
+
+.contenedor-nosotros {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 6.25em;
+}
+
+.contenido-nosotros {
+    display: flex;
+}
+
+.nosotros-info {
+    width: 30%;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -0.625em;
+    margin-right: 18.75em;
+    margin-left: 13.75em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.experiencia h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: -2.5em;
+}
+
+.experiencia h2,
+.realizados h2 {
+    content: "";
+    display: block;
+    width: 4.25em;
+    height: 4.25em;
+    background: rgb(238, 231, 231);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.nosotros-texto {
+    width: 60%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.125em;
+    font-weight: lighter;
+    line-height: 2;
+}
+
+.realizados h2 {
+    position: relative;
+    margin-bottom: -2.5em;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.experiencia h4,
+.realizados h4 {
+    font-size: 1.25em;
+    font-weight: lighter;
+    letter-spacing: 0.0875em;
+}
+
+.nosotros-texto h1 {
+    font-size: 1.875em;
+}
+
+.nosotros-texto span {
+    font-weight: bold;
+}
+
+.contenedor-espe {
+    width: 100%;
+    padding-right: 0.9375em;
+    padding-left: 0.9375em;
+    padding-right: auto;
+    padding-left: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4.375em;
+    margin-bottom: 6.25em;
+}
+
+
+/*INICIO LO QUE HACEMOS-------------*/
+.titulos {
+    text-align: center;
+    position: relative;
+    z-index: 9;
+    margin-top: 5em;
+}
+
+.titulos h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: lighter;
+    letter-spacing: 0.0938em;
+}
+
+.titulos h2,
+.texto-hacemos h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.625em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.especializacion {
+    width: 28.125em;
+    text-align: center;
+}
+
+.especializacion img {
+    width: 15.625em;
+    height: 15.625em;
+    border-radius: 50%;
+    border-width: 7px;
+    border-color: #dab88bd9;
+    border-style: double;
+}
+
+.especializacion img:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
+
+.texto-info {
+    margin-top: 2.5em;
+}
+
+
+/*INICIO ESTILOS SECTION COMO LO HACEMOS------------*/
+
+.como-hacemos {
+    background-color: #f8f8f8;
+    padding: 1.25em 0 2.5em 0;
+}
+
+.contenido-como-hacemos {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hacemos {
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.hacemos img {
+    width: 28.125em;
+    border-radius: 2em;
+    border-width: 0.7em;
+    border-color: #dab88be3;
+    border-style: groove;
+}
+
+.texto-hacemos {
+    width: 55%;
+    padding: 0 1.875em 1.875em 8.125em;
+}
+
+.texto-hacemos p,
+.texto-hacemos li {
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0.9375em;
+    line-height: 1.3;
+    font-weight: lighter;
+    padding: 0 1.875em;
+}
+
+.texto-hacemos p {
+    margin: 2.5em 0;
+    line-height: 1.9;
+}
+
+.texto-hacemos li {
+    list-style: none;
+    line-height: 1.9;
+}
+
+/*FIN ESTILOS NOSOTROS*/
+/*------------------------------------------------------------------------*/
+/*INICIO ESTILOS PROYECTOS*/
+
+.fondo-proyectos {
+    width: 100%;
+    height: 18.75em;
+    position: relative;
+    background-image: url("../images/fondomain8.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(30%);
+}
+
+.contenedor-proyectos {
+    width: 75em;
+    margin: 0 auto;
+}
+
+.proyectos {
+    margin-bottom: 5em;
+}
+
+.proyectos h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: left;
+}
+
+.proyectos p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.125em;
+    font-weight: lighter;
+    line-height: 2;
+}
+
+.imagenes-proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.foto-proyectos {
+    width: 35.625em;
+    height: 23.5em;
+    margin-bottom: 2.5em;
+    overflow: hidden;
+    border: solid 0.25em #DAB88B;
+    border-radius: 1.875em;
+}
+
+.foto-proyectos img:hover {
+    transition: all 0.9s ease-in-out;
+    transform: scale(1.3);
+    filter: grayscale(80%);
+}
+
+
+/*FIN ESTILOS PROYECTOS*/
+
+/*INICIO ESTILOS NOTICIAS*/
+.fondo-noticias {
+    width: 100%;
+    height: 18.75em;
+    position: relative;
+    background-image: url("../images/fondobanner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(30%);
+}
+
+.contenedor-noticias {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.noticia {
+    width: 30%;
+    padding: 0 0.9375em;
+    margin-bottom: 5em;
+}
+
+.noticia a {
+    text-decoration: none;
+}
+
+.img-noticia {
+    width: 100%;
+    border-radius: 2em;
+    border-color: black;
+    border-style: solid;
+    border-width: 0.2em;
+}
+.img-noticia:hover{
+    filter: opacity(.5);
+}
+.texto-blog {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    color: #0a0a0a;
+    text-decoration: none;
+}
+
+.texto-blog h2 {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 0.9375em;
+    text-transform: uppercase;
+}
+
+.texto-blog p {
+    font-size: 1em;
+    margin-bottom: 0.9375em;
+    line-height: 1.5;
+}
+
+.texto-blog span {
+    font-size: 0.875em;
+    font-weight: lighter;
+    letter-spacing: 0.1875em;
+}
+
+
+/*FIN ESTILOS NOTICIAS*/
+
+/*INICIO ESTILO FORMULARIO*/
+.fondo-contacto {
+    width: 100%;
+    height: 18.75em;
+    position: relative;
+    /*z-index: 1;*/
+    background-image: url("../images/fondomain2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(30%);
+}
+
+
+.formulario {
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-info {
+    padding: 0 2.8125em 0 4.375em;
+}
+
+.contenedor-form {
+    display: flex;
+    justify-content: space-around;
+    height: 15.625em;
+    align-items: center;
+    width: 100%;
+}
+
+.form-inputs {
+    width: 55%;
+    margin-top: 1.625em;
+}
+
+.mapa {
+    padding: 0 2.8125em 0 4.375em;
+    margin-bottom: 5em;
+}
+
+
+/*@MEDIA PARA RESPONSIVE CELULARES*/
+/*ESTILOS PARA EL HEADER*/
+
+@media screen and (min-width:0px) and (max-width:575px) {
+    header {
+        box-sizing: content-box;
+    }
+
+    .header-contenedor {
+        display: block;
+        position: relative;
+        top: -860px;
+        left: -210px;
+    }
+
+    .header-logo {
+        position: absolute;
+        top: 4.375em;
+        left: 6.75em;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-texto {
+        right: -4em;
+        width: 75%;
+    }
+
+    .header-texto p {
+        font-size: 1.5em;
+        text-align: center;
+        line-height: 1.4;
+        text-shadow: 0 0 0.2em rgb(252, 252, 252), 0 0 0.2em rgb(252, 252, 252),
+            0 0 0.2em rgb(252, 252, 252)
+    }
+
+    .header-texto h1 {
+        font-size: 1.95em;
+        text-align: left;
+        font-weight: bold !important;
+        margin-top: 2em;
+        color: white;
+        text-shadow: black 0.1em 0.1em 0.2em;
+    }
+
+    .header-texto p::before,
+    .header-texto p::after,
+    .header-texto h1::before,
+    .header-texto h1::after,
+    .header-logo::before,
+    .header-logo::after {
+        display: none;
+    }
+}
+
+/*ESTILOS PARA EL MENU*/
+@media screen and (min-width: 0px) and (max-width: 575px) {
+    .menu {
+        position: relative;
+        background: none;
+        transition: none;
+        transform: none;
+        right: -12.5em;
+        top: 3.5em;
+    }
+    /*.menu {
+    position: relative; 
+    background: none;
+    transition: none; 
+    transform: none; 
+    right: 9.5em;
+    top: 5.5em;
+    transition: all 0.5s;
+    transform: translateY(-60%);
+    position: absolute;
+    }*/
+
+    /*#menu-bar:checked ~ .menu{
+        transform: translateY(0%);
+    }*/
+
+    .menu a {
+        height: 1em;
+        margin-top: -0.5em;
+        font-size: 1.4em;
+        border-bottom: none;
+        text-shadow: 0 0 0.2em rgb(252 252 252), 0 0 0.2em rgb(252 252 252), 0 0 0.2em rgb(252 252 252);
+    }
+
+    .menu a:hover {
+        background: inherit !important;
+    }
+
+    .redes {
+        display: none;
+    }
+}
+
+/*ESTILOS PARA EL MAIN*/
+@media screen and (min-width:0px) and (max-width:575px) {
+    .contenedor-info {
+        flex-direction: column;
+        width: 85%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    main {
+        box-sizing: inherit !important;
+    }
+
+    .info {
+        width: 100%;
+    }
+}
+
+/*ESTILOS PARA EL WHATSAPP BOOTON*/
+@media screen and (min-width:0px) and (max-width:575px) {
+    .whatsapp-btn {
+        width: 2.8em;
+        height: 2.8em;
+        right: 1em;
+    }
+}
+
+/*ESTILOS PARA EL FOOTER*/
+@media screen and (min-width:0px) and (max-width:575px) {
+    .container-footer {
+        flex-direction: column;
+        justify-content: center;
+        width: 85%;
+        margin: 0 auto;
+        /*para centrarlo en esa medida*/
+    }
+
+    .container-footer>div {
+        width: 100%
+    }
+
+    .col-nav {
+        /*cambie a none para  que no aparezcan los iconos en formato cel*/
+        display: none;
+    }
+}
+
+/*ESTILOS NOSOTROS*/
+@media screen and (min-width:0px) and (max-width:575px) {
+    .fondo-nosotros {
+        height: 36em;
+    }
+    .nosotros-menu{
+        top: 29.2em;
+    }
+    .icon-nosotros{
+        top: 12em;
+    }
+    .contenido-nosotros {
+        flex-direction: column;
+    }
+
+    .nosotros-info {
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+        height: 20em;
+        margin-top: -5.5em;
+    }
+
+    .realizados h2,
+    .experiencia h2 {
+        font-size: 2em;
+        width: 4em;
+        height: 4em;
+    }
+
+    .nosotros-texto {
+        width: 90%;
+    }
+
+    .nosotros-texto h1 {
+        text-align: center;
+    }
+
+    .contenedor-espe {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*ESTILOS NOSOTROS LO QUE HACEMOS*/
+@media screen and (min-width:0px) and (max-width:575px) {
+    .titulos {
+        margin-top: 2em;
+        margin-bottom: 0;
+    }
+
+    .especializacion {
+        width: 21em;
+        text-align: center;
+        margin-bottom: 1.5em;
+    }
+}
+
+/*ESTILOS NOSOTROS COMO LO HACEMOS*/
+@media screen and (min-width:0px) and (max-width:575px) {
+    .hacemos {
+        flex-direction: column;
+    }
+
+    .texto-hacemos {
+        width: 95%;
+        padding: 0 1em;
+    }
+
+    .texto-hacemos ul {
+        margin-bottom: 2em;
+    }
+
+    .como-hacemos {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .hacemos img {
+        order: 2;
+        margin-left: 2.5em;
+        width: 18em;
+    }
+}
+
+/*ESTILOS PROYECTOS*/
+@media screen and (min-width:0px) and (max-width:575px) {
+    .fondo-proyectos{
+        height: 36em;
+    }
+    .proyectos-menu{
+        top: 29.2em;
+    }
+    .icon-proyectos{
+        top: 12em;
+    }
+    .contenedor-proyectos {
+        width: 90%;
+    }
+
+    .proyectos h1 {
+        text-align: center;
+    }
+}
+
+/*ESTILOS NOTICIAS*/
+@media screen and (min-width:0px) and (max-width:575px) {
+    .fondo-noticias{
+        height: 36em;
+        opacity: 70%;
+    }
+    .noticias-menu{
+        top: 29.2em;
+    }
+    .icon-noticias{
+        top: 12em;
+    }
+    
+    .contenedor-noticias {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .noticia {
+        width: 100%;
+    }
+}
+
+/*ESTILOS FORMULARIO*/
+@media screen and (min-width:0px) and (max-width:575px) {
+    .fondo-contacto{
+        height: 36em;
+    }
+    .contacto-menu{
+        top: 29.2em;
+    }
+    .icon-contacto{
+        top: 12em;
+    }
+    
+    .formulario {
+        width: 90%;
+    }
+
+    .form-info {
+        padding: 0;
+        font-size: 0.9em;
+    }
+
+    .contenedor-form {
+        flex-direction: column;
+        margin-bottom: -15em;
+    }
+
+    .col-info {
+        margin-top: 8em;
+        margin-right: 1em;
+    }
+
+    .col-info ul {
+        margin-top: 9em;
+    }
+
+    .mapa {
+        visibility: hidden
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .form-inputs {
+        width: 20em;
+    }
+}
+
+/*@MEDIA PARA RESPONSIVE TABLETS*/
+/*ESTILOS PARA HEADER*/
+@media screen and (min-width: 768px) {
+    .header-texto {
+        right: -5em;
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header-logo::after {
+        left: 24.25em;
+    }
+
+    .header-texto p::after {
+        right: 11em !important;
+        bottom: 25.5em !important;
+    }
+
+    .header-texto h1 {
+        font-size: 3.30em;
+    }
+
+    .header-texto h1::after {
+        right: 17.5em;
+        margin-top: 2.3em;
+    }
+}
+
+/*ESTILOS PARA EL MENU*/
+@media screen and (min-width: 768px) {
+    .menu {
+        width: 25%;
+        height: 30em;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .menu a {
+        height: 1em;
+        padding: 0.5em 0.5em 0.5em 1em;
+        font-size: 1.5em;
+        position: relative;
+        top: 1em;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width:1279px) {
+    .redes {
+        display: none;
+    }
+}
+
+/*ESTILOS PARA MAIN*/
+@media screen and (min-width:768px) {
+    .contenedor-info {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .info {
+        width: 30%;
+    }
+
+    .info img {
+        width: 12em;
+        height: 12em;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .texto-info p {
+        padding: 0 0.875em;
+        text-align: left;
+        line-height: 1.9;
+    }
+}
+
+/*ESTILOS WHATSAPP BOOTON*/
+@media screen and (min-width:768px) {
+    .whatsapp-btn {
+        right: 1em;
+    }
+}
+
+/*ESTILOS FOOTER*/
+@media screen and (min-width:768px) and (max-width:1279px) {
+    .col-nav {
+        display: none;
+    }
+
+    .col-info {
+        width: 30%;
+    }
+}
+
+/*ESTILOS NOSOTROS*/
+@media screen and (min-width:768px) and (max-width:1279px) {
+    .contenedor-nosotros {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1279px) {
+    .contenido-nosotros {
+        display: flex;
+    }
+
+    .nosotros-info {
+        margin-top: -5.625em;
+        margin-right: -1.25em;
+        margin-left: 1.75em;
+    }
+
+    .experiencia h2,
+    .realizados h2 {
+        width: 4.25em;
+        height: 4.25em;
+    }
+
+    .nosotros-texto {
+        width: 54%;
+    }
+}
+
+/*ESTILOS NOSOTROS LO QUE HACEMOS*/
+@media screen and (min-width:768px) and (max-width:1279px) {
+    .especializacion img {
+        width: 13em;
+        height: 13em;
+    }
+}
+
+/*ESTILOS NOSOTROS COMO LO HACEMOS*/
+@media screen and (min-width:768px) and (max-width:1279px) {
+    .hacemos {
+        flex-direction: column;
+    }
+
+    .texto-hacemos {
+        width: 100%;
+        padding: 0 1em;
+    }
+
+    .texto-hacemos ul {
+        margin-bottom: 3em;
+    }
+
+    .como-hacemos {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .hacemos img {
+        order: 2;
+        margin-left: 8.5em;
+        width: 30em;
+    }
+}
+
+/*ESTILOS PROYECTOS*/
+@media screen and (min-width:768px) and (max-width:1279px) {
+    .contenedor-proyectos {
+        width: 100%;
+    }
+
+    .proyectos h1 {
+        text-align: center;
+    }
+
+    .proyectos p {
+        margin-left: 1.5em;
+        margin-right: 1em;
+    }
+
+    .imagenes-proyectos {
+        margin-left: 5.5em;
+    }
+}
+
+/*@MEDIA PARA RESPONSIVE LAPTOPS*/
+/*ESTILOS PARA HEADER*/
+@media screen and (min-width: 1280px) {
+    .header-texto {
+        right: -11em;
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .header-logo::after {
+        left: 47.6em;
+        bottom: -2em;
+    }
+
+    .header-texto p {
+        font-size: 1.75em;
+    }
+
+    .header-texto p::after {
+        right: 14.5em !important;
+        bottom: 17.8em !important;
+    }
+
+    .header-texto h1 {
+        font-size: 4em;
+    }
+
+    .header-texto h1::after {
+        right: 2.5em;
+        margin-top: 2.3em;
+    }
+}
+
+/*ESTILOS PARA EL MENU*/
+@media screen and (min-width: 1280px) {
+    .menu {
+        width: 18%;
+        height: 37em;
+    }
+}
+
+/*ESTILOS PARA EL MAIN*/
+@media screen and (min-width:1280px) {
+    .contenedor-info {
+        width: 95%;
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .info img {
+        width: 15em;
+        height: 15em;
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .texto-info p {
+        padding: 0 0.875em;
+        text-align: center;
+        line-height: 2.2;
+    }
+}
+
+/*ESTILOS NOSOTROS*/
+@media screen and (min-width:1280px) and (max-width:1919px) {
+    .contenido-nosotros {
+        display: flex;
+    }
+
+    .nosotros-info {
+        margin-top: -5.625em;
+        margin-right: -1.25em;
+        margin-left: 1.75em;
+    }
+
+    .experiencia h2,
+    .realizados h2 {
+        width: 4.25em;
+        height: 4.25em;
+    }
+
+    .nosotros-texto {
+        width: 54%;
+    }
+}
+
+/*ESTILOS NOSOTROS COMO LO HACEMOS*/
+@media screen and (min-width:1280px) and (max-width:1919px) {
+    .texto-hacemos {
+        width: 55%;
+        padding: 0;
+    }
+}
+
+/*@MEDIA PARA RESPONSIVE PC'S*/
+/*ESTILOS HEADER*/
+@media screen and (min-width: 1920px) {
+    .header-texto {
+        top: -35em;
+        right: -11em;
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .header-logo::after {
+        left: 73.6em;
+    }
+
+    .header-texto p::after {
+        right: 31.2em !important;
+    }
+
+    .header-texto h1::after {
+        right: 22.5em;
+    }
+}
+
+/*ESTILOS MENU*/
+@media screen and (min-width: 1920px) {
+    .menu {
+        width: 13%;
+        height: 36em;
+    }
+}
+
+/*ESTILOS MAIN*/
+@media screen and (min-width:1920px) {
+    .contenedor-info {
+        width: 82%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .info img {
+        width: 18em;
+        height: 18em;
+    }
+}
