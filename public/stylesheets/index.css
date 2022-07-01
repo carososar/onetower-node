@@ -45,6 +45,7 @@ header {
     position: absolute;
     top: 4.375em;
     left: 3.75em;
+    z-index: 200;
 }
 
 .header-logo::before {
