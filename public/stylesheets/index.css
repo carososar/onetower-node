@@ -763,6 +763,11 @@ header label:hover {
     width: 55%;
     margin-top: 1.625em;
 }
+.message {
+    text-align: left;
+    font-weight: bold;
+
+}
 
 .mapa {
     padding: 0 2.8125em 0 4.375em;
@@ -1088,6 +1093,9 @@ header label:hover {
 
     .form-inputs {
         width: 20em;
+    }
+    .message {
+        margin-top: 465px;
     }
 }
 

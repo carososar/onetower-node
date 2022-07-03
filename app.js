@@ -4,11 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+require('dotenv').config(); //para que cargue los datos del archivo .env
+
+var indexRouter = require('./routes/index');//routes/index.js
 var nosotrosRouter = require('./routes/nosotros'); //routes/nosotros.js
-var proyectosRouter = require('./routes/proyectos');
-var noticiasRouter = require('./routes/noticias');
-var contactoRouter = require('./routes/contacto');
+var proyectosRouter = require('./routes/proyectos'); //routes/proyectos
+var noticiasRouter = require('./routes/noticias'); //routes/noticias
+var contactoRouter = require('./routes/contacto'); //routes/contacto
 
 var app = express();
 
