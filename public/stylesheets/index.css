@@ -764,7 +764,7 @@ header label:hover {
     margin-top: 1.625em;
 }
 .message {
-    text-align: left;
+    text-align: right;
     font-weight: bold;
 
 }
