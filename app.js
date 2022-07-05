@@ -8,9 +8,10 @@ require('dotenv').config(); //para que cargue los datos del archivo .env
 
 var indexRouter = require('./routes/index');//routes/index.js
 var nosotrosRouter = require('./routes/nosotros'); //routes/nosotros.js
-var proyectosRouter = require('./routes/proyectos'); //routes/proyectos
-var noticiasRouter = require('./routes/noticias'); //routes/noticias
-var contactoRouter = require('./routes/contacto'); //routes/contacto
+var proyectosRouter = require('./routes/proyectos'); //routes/proyectos.js
+var noticiasRouter = require('./routes/noticias'); //routes/noticias.js
+var contactoRouter = require('./routes/contacto'); //routes/contacto.js
+var loginRouter = require('./routes/admin/login'); //routes/adm/login.js
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/nosotros', nosotrosRouter);
 app.use('/proyectos', proyectosRouter);
 app.use('/noticias', noticiasRouter);
 app.use('/contacto', contactoRouter);
+app.use('/admin/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
