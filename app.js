@@ -13,7 +13,7 @@ var proyectosRouter = require('./routes/proyectos'); //routes/proyectos.js
 var noticiasRouter = require('./routes/noticias'); //routes/noticias.js
 var contactoRouter = require('./routes/contacto'); //routes/contacto.js
 var loginRouter = require('./routes/admin/login'); //routes/admin/login.js
-var adminRouter = require('./routes/admin/nosotros'); //routes/admin/nosotros.js
+var adminRouter = require('./routes/admin/noticias'); //routes/admin/nosotros.js
 
 var app = express();
 
@@ -55,7 +55,7 @@ app.use('/proyectos', proyectosRouter);
 app.use('/noticias', noticiasRouter);
 app.use('/contacto', contactoRouter);
 app.use('/admin/login', loginRouter);
-app.use('/admin/nosotros', secured, adminRouter);
+app.use('/admin/noticias', secured, adminRouter);
 //en la linea 58 lo que hice fue agregar la seguridad, que hicimos el codigo en la linea 38.
 
 

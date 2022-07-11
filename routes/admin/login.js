@@ -21,7 +21,7 @@ router.post('/', async function(req,res,next){
             req.session.id_usuario = data.id;
             req.session.nombre = data.usuario;
 
-            res.redirect('/admin/nosotros') //le vamos a decir que si los datos son correctos, en este caso esta comparando los datos que estan en var data te da acceso y pasas a nosotros.
+            res.redirect('/admin/noticias') //le vamos a decir que si los datos son correctos, en este caso esta comparando los datos que estan en var data te da acceso y pasas a nosotros.
         } else{
             res.render('admin/login',{ //es el login.hbs
                 layout:'admin/layout',
@@ -54,7 +54,7 @@ router.post('/', async function(req,res,next){
             req.session.id_usuario = data.id;
             req.session.nombre = data.usuario;
 
-            res.redirect('/admin/nosotros') //le vamos a decir que si los datos son correctos, en este caso esta comparando los datos que estan en var data te da acceso y pasas a nosotros.
+            res.redirect('/admin/noticias') //le vamos a decir que si los datos son correctos, en este caso esta comparando los datos que estan en var data te da acceso y pasas a nosotros.
         } else{
             res.render('admin/login',{ //es el login.hbs
                 layout:'admin/layout',
