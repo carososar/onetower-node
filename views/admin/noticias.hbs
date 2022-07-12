@@ -26,18 +26,24 @@
                     <tr class="table-secondary">
                         <th scope="col">#</th>
                         <th scope="col">Titulo</th>
+                        <th scope="col">Subtitulo</th>
+                        <th scope="col">Link</th>
                         <th scope="col" class="text-end">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {{#each noticias}}
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Titulo</td>
+                        <th scope="row">{{id}}</th> {{!--nombre de la columna tabla--}}
+                        <td>{{titulo}}</td>
+                        <td>{{subtitulo}}</td>
+                        <td>{{link}}</td>
                         <td class="text-end">
                             <a href="" class="btn btn-secondary"><i class="fa-solid fa-pencil"></i></a>
                             <a href="" class="btn btn-secondary"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
+                    {{/each}}
                 </tbody>
             </table>
         </div>
