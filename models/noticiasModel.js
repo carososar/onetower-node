@@ -6,5 +6,17 @@ async function getNoticias(){
     return rows;
 }
 
+async function insertNoticias(obj){
+    try{
+        var query = 'insert into noticias set ?';
+        var rows = await pool.query(query,[obj]);
+        return rows;
 
-module.exports = { getNoticias }
+    }catch(error){
+        console.log(error);
+        throw error;
+    }
+}
+
+
+module.exports = { getNoticias, insertNoticias  }
