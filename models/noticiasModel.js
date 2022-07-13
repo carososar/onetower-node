@@ -19,4 +19,4 @@ async function insertNoticias(obj){
 }
 
 
-module.exports = { getNoticias, insertNoticias  }
+module.exports = { getNoticias, insertNoticias }
