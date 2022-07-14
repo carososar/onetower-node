@@ -19,4 +19,18 @@ async function insertNoticias(obj){
 }
 
 
-module.exports = { getNoticias, insertNoticias }
+async function deleteNoticiaByID(id){
+    var query = 'delete from noticias where id= ?';
+    var rows = await pool.query(query,[id]);
+    return rows;
+}
+
+async function getNoticiasByID(id){
+    var query = 'select * from noticias where id= ?';
+    var rows = await pool.query(query, [id]);
+    return rows;
+}
+
+
+
+module.exports = { getNoticias, insertNoticias, deleteNoticiaByID, getNoticiasByID }

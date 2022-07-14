@@ -15,11 +15,18 @@
   <label class="form-label">Cuerpo</label>
   <textarea class="form-control" rows="3" name="cuerpo"></textarea>
 </div>
+<div class="mb-3">
+  <label class="form-label">Link</label>
+  <textarea class="form-control" rows="3" name="Link"></textarea>
+</div>
 <div class="col-auto">
     <button type="submit" class="btn btn-secondary">Guardar</button>
   </div>
 
             </form>
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
         </div>
     </div>
 
