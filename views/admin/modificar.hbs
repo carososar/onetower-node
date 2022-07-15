@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Modificar una nueva noticia</h2>
+            <form action="/admin/noticias/modificar" method="post">
+            <input type="hidden" value="{{noticia.id}}" name="id">
+                <div class="mb-3">
+  <label class="form-label">Titulo</label>
+  <input type="text" class="form-control"  name="titulo">
+</div>
+<div class="mb-3">
+  <label class="form-label">Subtitulo</label>
+  <textarea class="form-control" rows="3" name="subtitulo"></textarea>
+</div>
+<div class="mb-3">
+  <label class="form-label">Cuerpo</label>
+  <textarea class="form-control" rows="3" name="cuerpo"></textarea>
+</div>
+<div class="mb-3">
+  <label class="form-label">Link</label>
+  <textarea class="form-control" rows="3" name="Link"></textarea>
+</div>
+<div class="col-auto">
+    <button type="submit" class="btn btn-secondary">Guardar</button>
+  </div>
+
+            </form>
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+
+
+</div>
