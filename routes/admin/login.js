@@ -8,6 +8,14 @@ router.get('/', function(req, res,next){
     }); // view/admin/login.hbs
 }); //cierro get
 
+router.get('/logout', function(req,res,next){
+    req.session.destroy(); //destruye id, nombre
+    res.render('admin/login',{
+        layout:'admin/layout'
+    })
+})
+
+
 router.post('/', async function(req,res,next){
 
     try{  //aca estamos capturando los datos y necesitamos que de algun modo se conecte con el archivo usuariosModel, para poder pasarle los datos a la funsion que creamos en usuariosModel, entonces lo que vamos a hacer despues de crear las dos var...usuario y password, tenemos que incluir el archivo. entonces vamos a ir a arriba y debajo de var router.

@@ -73,7 +73,7 @@ router.post('/modificar', async(req,res,next)=>{
         var obj = {
             titulo:req.body.titulo,
             subtitulo: req.body.subtitulo,
-            cuerpo: req.body.cuerpo
+            cuerpo: req.body.cuerpo,
             link: req.body.link
         }
 
@@ -85,7 +85,7 @@ router.post('/modificar', async(req,res,next)=>{
         res.render('admin/modificar',{
             layout:'admin/layout',
             error: true,
-            message: 'No se mofico la noticia'
+            message: 'No se modifico la noticia'
         })
     }
 })
