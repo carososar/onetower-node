@@ -4,11 +4,20 @@ var noticiasModel = require('../../models/noticiasModel');
 
 //diseño y listado de noticias//
 router.get('/', async function(req, res,next){
-    var noticias = await noticiasModel.getNoticias();
+    //var noticias = await noticiasModel.getNoticias();
+    var noticias
+    if(req.query.q === undefined){
+        noticias = await noticiasModel.getNoticias();
+    }else{
+        noticias = await noticiasModel.buscarNoticias(req.query.q);
+    }
 
     res.render('admin/noticias',{
         layout:'admin/layout', 
-        persona:req.session.nombre, noticias 
+        persona:req.session.nombre, 
+        noticias,
+        q: req.query.q,
+        is_search: req.query.q !== undefined
     }); // view/admin/noticias.hbs
 }); //cierro get
 

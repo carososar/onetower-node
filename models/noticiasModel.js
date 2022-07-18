@@ -42,4 +42,10 @@ async function modificarNoticiaByID(obj,id){
 }
 
 
-module.exports = { getNoticias, insertNoticias, deleteNoticiaByID, getNoticiasByID, modificarNoticiaByID }
+async function buscarNoticias(busqueda){
+    var query = 'select * from noticias where titulo like ? OR subtitulo like ? OR cuerpo like ? OR link like ?';
+    var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
+    return rows;
+}
+
+module.exports = { getNoticias, insertNoticias, deleteNoticiaByID, getNoticiasByID, modificarNoticiaByID, buscarNoticias }

@@ -12,8 +12,14 @@
         <div class="col-7">
             <h2>Listado de Noticias</h2>
         </div>
-        <div class="col-5 text-end">
+        <div class="col-2 text-end">
             <a href="/admin/noticias/agregar" class="btn btn-success"><i class="fa-solid fa-plus"></i>Nuevo</a>
+        </div>
+        <div class="col-3 text-end">
+            <form action="/admin/noticias" method="get" class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="q" {{#if q}} value="{{q}}" {{/if}}>
+        <button class="btn btn-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
         </div>
     </div>
     {{!--Fin fila 2--}}
@@ -48,6 +54,11 @@
                     {{/each}}
                 </tbody>
             </table>
+            {{#if is_search}}
+            {{#unless noticias.length}}
+            <p>No se encontraron resultados para <b>"{{q}}"</b></p>
+            {{/unless}}
+            {{/if}}
         </div>
     </div>
     {{!--Fin fila 3--}}
