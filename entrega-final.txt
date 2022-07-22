@@ -1,0 +1,14 @@
+Alumna: Carolina Sosa Rojido
+
+Descripcion: Evaluación final e integradora
+
+Desarrollo web en Node.
+Pagina Principal y 4 secciones.
+Diseño, desarrollo y funcionamiento de toda la navegación del sitio.
+Textos reales.
+Envio de mail.
+Login-Logout.
+Interaccion con base de datos, modificar, agregar, buscar y eliminar noticias (Admin)
+
+Se adjunta Base de datos.sql y Base de datos con apellido.sql
+
